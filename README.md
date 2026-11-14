@@ -14,7 +14,7 @@
 | 항목 | 내용 |
 | --- | --- |
 | 앱 이름 · 한 줄 소개 | 플릿 닥터 — 같은 길을 지난 다른 차들과 비교해 핸들 쏠림·에너지 소비 변화를 정비소에 가기 전에 음성으로 알리고, 가까운 정비소를 경유지로 넣어 주는 Pleos 앱 |
-| APK 위치 | [`apk/TEAMNAME_FleetDoctor_release.apk`](apk/) — 시연용(mock) release 빌드, 일반 안드로이드 에뮬레이터에서 실행<br>[`apk/TEAMNAME_FleetDoctor-pleos_release.apk`](apk/) — 실차용(pleos) release 빌드, Pleos Connect SDK 5종 사용(Pleos Connect 환경 필요) |
+| APK 위치 | [`apk/SameRoad_FleetDoctor_release.apk`](apk/) — 시연용(mock) release 빌드, 일반 안드로이드 에뮬레이터에서 실행<br>[`apk/SameRoad_FleetDoctor-pleos_release.apk`](apk/) — 실차용(pleos) release 빌드, Pleos Connect SDK 5종 사용(Pleos Connect 환경 필요) |
 | 테스트 환경 | macOS, Android Emulator(Android 16 · API 36, arm64), Python 3.11 이상, JDK 17 이상, Gradle 8.10 · AGP 8.7 · Kotlin 2.0 |
 | 필요한 설정 | 시연용 앱은 같은 컴퓨터에서 도는 플릿 닥터 서버(`http://10.0.2.2:8000`, 에뮬레이터에서 본 내 컴퓨터)와 시연 운전 스크립트가 있어야 움직입니다. 아래 [실행 방법](#실행-방법)을 따르세요. 앱 권한: 위치, 알림 |
 | 시연 영상 | 접수 메일에 첨부한 `fleetdoctor_demo.mp4` (2분 20초, 에뮬레이터 화면 녹화) |
@@ -94,7 +94,7 @@ python3 -m venv .venv
 **에뮬레이터 시연**: 앱을 설치하고 위치·알림 권한을 준 뒤 켭니다. 앱이 서버에서 시연 차의 지난 기록을 받아 평소 상태를 배운 채로 시작합니다. 그다음 시연 운전을 돌립니다.
 
 ```bash
-adb -s emulator-5554 install -r apk/TEAMNAME_FleetDoctor_release.apk
+adb -s emulator-5554 install -r apk/SameRoad_FleetDoctor_release.apk
 ```
 
 ```bash
