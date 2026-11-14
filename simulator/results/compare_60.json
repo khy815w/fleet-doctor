@@ -1,0 +1,521 @@
+{
+ "cars": 60,
+ "days": 70,
+ "seed": 3,
+ "strategies": {
+  "own": {
+   "alarm_precision": 0.018,
+   "false_alarms": 56,
+   "monitored_car_days": 2868,
+   "false_per_1000_car_days": 19.53,
+   "false_per_1000_by_powertrain": {
+    "ev": 19.82,
+    "ice": 18.6
+   },
+   "all": {
+    "faults": 6,
+    "detected": 1,
+    "detected_share": 0.167,
+    "median_days": 6,
+    "right_advice": 1,
+    "already_alarming": 5
+   },
+   "by_kind": {
+    "alignment": {
+     "faults": 3,
+     "detected": 0,
+     "detected_share": 0.0,
+     "median_days": null,
+     "right_advice": 0,
+     "already_alarming": 3
+    },
+    "slow_leak": {
+     "faults": 1,
+     "detected": 0,
+     "detected_share": 0.0,
+     "median_days": null,
+     "right_advice": 0,
+     "already_alarming": 1
+    },
+    "brake_drag": {
+     "faults": 2,
+     "detected": 1,
+     "detected_share": 0.5,
+     "median_days": 6,
+     "right_advice": 1,
+     "already_alarming": 1
+    }
+   },
+   "learned_cars": 59,
+   "median_learn_days": 14,
+   "faults": [
+    {
+     "car": 10,
+     "model": "B",
+     "start": 39,
+     "already_alarming": true,
+     "detected_after_days": null,
+     "kind_found": null,
+     "steer": -1.26,
+     "eff_pct": 1.3,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 15,
+     "model": "D",
+     "start": 32,
+     "already_alarming": true,
+     "detected_after_days": null,
+     "kind_found": null,
+     "steer": -2.82,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 42,
+     "model": "B",
+     "start": 45,
+     "already_alarming": true,
+     "detected_after_days": null,
+     "kind_found": null,
+     "steer": -2.28,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 43,
+     "model": "B",
+     "start": 25,
+     "already_alarming": true,
+     "detected_after_days": null,
+     "kind_found": null,
+     "steer": -0.92,
+     "eff_pct": 2.9,
+     "tpms_after_days": 11,
+     "learned": true,
+     "kind": "slow_leak"
+    },
+    {
+     "car": 27,
+     "model": "A",
+     "start": 26,
+     "already_alarming": false,
+     "detected_after_days": 6,
+     "kind_found": "drag",
+     "steer": 0.58,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    },
+    {
+     "car": 48,
+     "model": "B",
+     "start": 34,
+     "already_alarming": true,
+     "detected_after_days": null,
+     "kind_found": null,
+     "steer": 0.43,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    }
+   ],
+   "label": "내 차 평소 값만 (다른 차와 비교 안 함)"
+  },
+  "fleet_all": {
+   "alarm_precision": 0.109,
+   "false_alarms": 41,
+   "monitored_car_days": 2868,
+   "false_per_1000_car_days": 14.3,
+   "false_per_1000_by_powertrain": {
+    "ev": 18.44,
+    "ice": 1.43
+   },
+   "all": {
+    "faults": 6,
+    "detected": 5,
+    "detected_share": 0.833,
+    "median_days": 1,
+    "right_advice": 3,
+    "already_alarming": 1,
+    "days_before_tpms_median": 9
+   },
+   "by_kind": {
+    "alignment": {
+     "faults": 3,
+     "detected": 2,
+     "detected_share": 0.667,
+     "median_days": 0.0,
+     "right_advice": 2,
+     "already_alarming": 1
+    },
+    "slow_leak": {
+     "faults": 1,
+     "detected": 1,
+     "detected_share": 1.0,
+     "median_days": 2,
+     "right_advice": 0,
+     "already_alarming": 0,
+     "days_before_tpms_median": 9
+    },
+    "brake_drag": {
+     "faults": 2,
+     "detected": 2,
+     "detected_share": 1.0,
+     "median_days": 3.5,
+     "right_advice": 1,
+     "already_alarming": 0
+    }
+   },
+   "learned_cars": 59,
+   "median_learn_days": 14,
+   "faults": [
+    {
+     "car": 10,
+     "model": "B",
+     "start": 39,
+     "already_alarming": false,
+     "detected_after_days": 0,
+     "kind_found": "tire",
+     "steer": -1.26,
+     "eff_pct": 1.3,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 15,
+     "model": "D",
+     "start": 32,
+     "already_alarming": false,
+     "detected_after_days": 0,
+     "kind_found": "tire",
+     "steer": -2.82,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 42,
+     "model": "B",
+     "start": 45,
+     "already_alarming": true,
+     "detected_after_days": null,
+     "kind_found": null,
+     "steer": -2.28,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 43,
+     "model": "B",
+     "start": 25,
+     "already_alarming": false,
+     "detected_after_days": 2,
+     "kind_found": "drag",
+     "steer": -0.92,
+     "eff_pct": 2.9,
+     "tpms_after_days": 11,
+     "learned": true,
+     "kind": "slow_leak"
+    },
+    {
+     "car": 27,
+     "model": "A",
+     "start": 26,
+     "already_alarming": false,
+     "detected_after_days": 6,
+     "kind_found": "tire",
+     "steer": 0.58,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    },
+    {
+     "car": 48,
+     "model": "B",
+     "start": 34,
+     "already_alarming": false,
+     "detected_after_days": 1,
+     "kind_found": "drag",
+     "steer": 0.43,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    }
+   ],
+   "label": "다른 차와 비교, 차종 무시"
+  },
+  "fleet_model": {
+   "alarm_precision": 0.261,
+   "false_alarms": 17,
+   "monitored_car_days": 2868,
+   "false_per_1000_car_days": 5.93,
+   "false_per_1000_by_powertrain": {
+    "ev": 7.84,
+    "ice": 0.0
+   },
+   "all": {
+    "faults": 6,
+    "detected": 6,
+    "detected_share": 1.0,
+    "median_days": 5.5,
+    "right_advice": 4,
+    "already_alarming": 0,
+    "days_before_tpms_median": 5
+   },
+   "by_kind": {
+    "alignment": {
+     "faults": 3,
+     "detected": 3,
+     "detected_share": 1.0,
+     "median_days": 0,
+     "right_advice": 3,
+     "already_alarming": 0
+    },
+    "slow_leak": {
+     "faults": 1,
+     "detected": 1,
+     "detected_share": 1.0,
+     "median_days": 6,
+     "right_advice": 0,
+     "already_alarming": 0,
+     "days_before_tpms_median": 5
+    },
+    "brake_drag": {
+     "faults": 2,
+     "detected": 2,
+     "detected_share": 1.0,
+     "median_days": 6.5,
+     "right_advice": 1,
+     "already_alarming": 0
+    }
+   },
+   "learned_cars": 59,
+   "median_learn_days": 14,
+   "faults": [
+    {
+     "car": 10,
+     "model": "B",
+     "start": 39,
+     "already_alarming": false,
+     "detected_after_days": 0,
+     "kind_found": "pull",
+     "steer": -1.26,
+     "eff_pct": 1.3,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 15,
+     "model": "D",
+     "start": 32,
+     "already_alarming": false,
+     "detected_after_days": 0,
+     "kind_found": "tire",
+     "steer": -2.82,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 42,
+     "model": "B",
+     "start": 45,
+     "already_alarming": false,
+     "detected_after_days": 5,
+     "kind_found": "tire",
+     "steer": -2.28,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 43,
+     "model": "B",
+     "start": 25,
+     "already_alarming": false,
+     "detected_after_days": 6,
+     "kind_found": "drag",
+     "steer": -0.92,
+     "eff_pct": 2.9,
+     "tpms_after_days": 11,
+     "learned": true,
+     "kind": "slow_leak"
+    },
+    {
+     "car": 27,
+     "model": "A",
+     "start": 26,
+     "already_alarming": false,
+     "detected_after_days": 6,
+     "kind_found": "tire",
+     "steer": 0.58,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    },
+    {
+     "car": 48,
+     "model": "B",
+     "start": 34,
+     "already_alarming": false,
+     "detected_after_days": 7,
+     "kind_found": "drag",
+     "steer": 0.43,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    }
+   ],
+   "label": "다른 차와 비교, 차종 반영 (플릿 닥터)"
+  },
+  "oracle": {
+   "alarm_precision": 0.545,
+   "false_alarms": 5,
+   "monitored_car_days": 2868,
+   "false_per_1000_car_days": 1.74,
+   "false_per_1000_by_powertrain": {
+    "ev": 1.38,
+    "ice": 2.86
+   },
+   "all": {
+    "faults": 6,
+    "detected": 6,
+    "detected_share": 1.0,
+    "median_days": 5.5,
+    "right_advice": 5,
+    "already_alarming": 0,
+    "days_before_tpms_median": 4
+   },
+   "by_kind": {
+    "alignment": {
+     "faults": 3,
+     "detected": 3,
+     "detected_share": 1.0,
+     "median_days": 1,
+     "right_advice": 3,
+     "already_alarming": 0
+    },
+    "slow_leak": {
+     "faults": 1,
+     "detected": 1,
+     "detected_share": 1.0,
+     "median_days": 7,
+     "right_advice": 1,
+     "already_alarming": 0,
+     "days_before_tpms_median": 4
+    },
+    "brake_drag": {
+     "faults": 2,
+     "detected": 2,
+     "detected_share": 1.0,
+     "median_days": 6.5,
+     "right_advice": 1,
+     "already_alarming": 0
+    }
+   },
+   "learned_cars": 59,
+   "median_learn_days": 14,
+   "faults": [
+    {
+     "car": 10,
+     "model": "B",
+     "start": 39,
+     "already_alarming": false,
+     "detected_after_days": 1,
+     "kind_found": "pull",
+     "steer": -1.26,
+     "eff_pct": 1.3,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 15,
+     "model": "D",
+     "start": 32,
+     "already_alarming": false,
+     "detected_after_days": 0,
+     "kind_found": "tire",
+     "steer": -2.82,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 42,
+     "model": "B",
+     "start": 45,
+     "already_alarming": false,
+     "detected_after_days": 5,
+     "kind_found": "tire",
+     "steer": -2.28,
+     "eff_pct": 0.6,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "alignment"
+    },
+    {
+     "car": 43,
+     "model": "B",
+     "start": 25,
+     "already_alarming": false,
+     "detected_after_days": 7,
+     "kind_found": "tire",
+     "steer": -0.92,
+     "eff_pct": 2.9,
+     "tpms_after_days": 11,
+     "learned": true,
+     "kind": "slow_leak"
+    },
+    {
+     "car": 27,
+     "model": "A",
+     "start": 26,
+     "already_alarming": false,
+     "detected_after_days": 6,
+     "kind_found": "tire",
+     "steer": 0.58,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    },
+    {
+     "car": 48,
+     "model": "B",
+     "start": 34,
+     "already_alarming": false,
+     "detected_after_days": 7,
+     "kind_found": "drag",
+     "steer": 0.43,
+     "eff_pct": 5.8,
+     "tpms_after_days": null,
+     "learned": true,
+     "kind": "brake_drag"
+    }
+   ],
+   "label": "실제 길 몫을 그대로 안다고 칠 때 (참고)"
+  }
+ }
+}

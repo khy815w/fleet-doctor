@@ -1,0 +1,32 @@
+[
+ {
+  "id": "A",
+  "name": "전기 세단",
+  "powertrain": "ev"
+ },
+ {
+  "id": "B",
+  "name": "전기 SUV",
+  "powertrain": "ev"
+ },
+ {
+  "id": "C",
+  "name": "소형 전기 SUV",
+  "powertrain": "ev"
+ },
+ {
+  "id": "D",
+  "name": "대형 전기 SUV",
+  "powertrain": "ev"
+ },
+ {
+  "id": "E",
+  "name": "가솔린 세단",
+  "powertrain": "ice"
+ },
+ {
+  "id": "F",
+  "name": "하이브리드 SUV",
+  "powertrain": "ice"
+ }
+]

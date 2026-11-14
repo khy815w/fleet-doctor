@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- pleos 빌드에만 더해지는 선언. Pleos 권한은 앱마켓과 협의·승인된 범위에서만 쓸 수 있다. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-feature android:name="android.hardware.type.automotive" android:required="true" />
+
+    <!-- 핸들(앞바퀴) 각도: SteeringWheel.registerSteeringWheelAngle -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <!-- 순간 전비(km/kWh)·순간 연비(L/100km): EvBattery·Fuel -->
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />
+</manifest>

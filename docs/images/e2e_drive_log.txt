@@ -1,0 +1,22 @@
+주행 1/6: V2-1N → V2-2N → V2-3N → H4-2E → H4-3E  고장: 없음  (표본 546개)
+  [앱] demo history: 172 passes, last trip 291, learned=true
+주행 2/6: V4-3S → V4-2S → V4-1S → H1-3W → H1-2W  고장: 없음  (표본 549개)
+  [앱] trip 320 day=32 passes=5 reported=7 waiting=0 finding=null new=false speech=핸들 쏠림도, 전기 쓰는 양도 평소와 같아요.
+주행 3/6: V2-1N → V2-2N → V2-3N → H4-2E → H4-3E  고장: tire  (표본 542개)
+  [앱] trip 321 day=32 passes=5 reported=8 waiting=0 finding=null new=false speech=핸들 쏠림도, 전기 쓰는 양도 평소와 같아요.
+주행 4/6: V4-3S → V4-2S → V4-1S → H1-3W → H1-2W  고장: tire  (표본 545개)
+  [앱] trip 322 day=32 passes=5 reported=7 waiting=0 finding=null new=false speech=핸들 쏠림도, 전기 쓰는 양도 평소와 같아요.
+  [앱] trip 323 day=32 passes=5 reported=5 waiting=0 finding=tire new=true speech=차가 왼쪽으로 쏠리고, 전기도 평소보다 약 4퍼센트 더 써요. 왼쪽 타이어 공기압부터 확인해 보세요. 공기압이 괜찮으면 바퀴 정렬을 점검하세요.
+  [앱] speak: 차가 왼쪽으로 쏠리고, 전기도 평소보다 약 4퍼센트 더 써요. 왼쪽 타이어 공기압부터 확인해 보세요. 공기압이 괜찮으면 바퀴 정렬을 점검하세요.
+  [앱] speak: 가까운 정비소를 경유지로 넣을까요?
+주행 5/6: V2-1N → V2-2N → V2-3N → H4-2E → H4-3E  고장: tire  (표본 536개)
+  → 방송 ANSWER (응)
+  [앱] heard: 응
+  [앱] waypoint: 시연용 정비소 1 (37.294209, 127.104812)
+  [앱] speak: 시연용 정비소 1, 경유지로 넣었어요.
+  → 방송 ASK
+  [앱] speak: 차가 왼쪽으로 쏠리고, 전기도 평소보다 약 4퍼센트 더 써요. 왼쪽 타이어 공기압부터 확인해 보세요. 공기압이 괜찮으면 바퀴 정렬을 점검하세요.
+주행 6/6: V4-3S → V4-2S → V4-1S → H1-3W → H1-2W  고장: tire  (표본 546개)
+  [앱] trip 324 day=32 passes=5 reported=0 waiting=0 finding=tire new=false speech=차가 왼쪽으로 쏠리고, 전기도 평소보다 약 7퍼센트 더 써요. 왼쪽 타이어 공기압부터 확인해 보세요. 공기압이 괜찮으면 바퀴 정렬을 점검하세요.
+  [앱] trip 325 day=32 passes=5 reported=0 waiting=0 finding=tire new=false speech=차가 왼쪽으로 쏠리고, 전기도 평소보다 약 7퍼센트 더 써요. 왼쪽 타이어 공기압부터 확인해 보세요. 공기압이 괜찮으면 바퀴 정렬을 점검하세요.
+끝

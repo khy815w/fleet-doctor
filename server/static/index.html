@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>플릿 닥터 관제</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --text: #0b0b0b; --text-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10);
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300;
+    --neg: #2a78d6; --mid: #f0efec; --pos: #e34948; --none: #c3c2b7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface: #1a1a19; --text: #f0efec; --text-2: #c3c2b7; --muted: #898781;
+      --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+      --neg: #3987e5; --mid: #383835; --pos: #e66767; --none: #4a4a46;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --text: #f0efec; --text-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+    --neg: #3987e5; --mid: #383835; --pos: #e66767; --none: #4a4a46;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text);
+         font: 14px/1.5 system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif; }
+  header { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 24px; padding: 16px 20px 12px; }
+  h1 { font-size: 19px; margin: 0; }
+  .sub { color: var(--text-2); font-size: 13px; margin-top: 2px; }
+  .kpis { display: flex; flex-wrap: wrap; gap: 10px; margin-left: auto; }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; min-width: 104px; }
+  .kpi b { display: block; font-size: 19px; }
+  .kpi span { color: var(--text-2); font-size: 12px; }
+  .filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 0 20px 12px; }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; background: var(--surface); color: var(--text-2); padding: 6px 12px; font: inherit; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--text); color: var(--surface); }
+  select { font: inherit; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+  label { color: var(--text-2); font-size: 13px; }
+  main { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 16px; padding: 0 20px 20px; }
+  section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+  section h2 { font-size: 14px; margin: 0 0 2px; }
+  section .desc { color: var(--text-2); font-size: 12.5px; margin: 0 0 10px; }
+  .wide { grid-column: 1 / -1; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--text-2); font-size: 12px; margin: 0 0 8px; }
+  .legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; margin-right: 6px; vertical-align: 3px; }
+  .ramp { display: flex; align-items: center; gap: 6px; color: var(--text-2); font-size: 12px; margin-top: 8px; flex-wrap: wrap; }
+  .ramp span.sw { display: inline-block; width: 22px; height: 8px; border-radius: 2px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--text-2); font-weight: 600; font-size: 12px; }
+  tr.me td { font-weight: 700; }
+  .tip { position: fixed; pointer-events: none; background: var(--surface); color: var(--text); border: 1px solid var(--border);
+         border-radius: 8px; padding: 8px 10px; font-size: 12.5px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); display: none; z-index: 5; min-width: 150px; }
+  .tip .row { display: flex; justify-content: space-between; gap: 12px; }
+  .tip .row i { display: inline-block; width: 10px; height: 3px; border-radius: 2px; margin-right: 6px; vertical-align: 3px; }
+  .note { color: var(--muted); font-size: 12px; margin: 10px 0 0; }
+  details summary { cursor: pointer; color: var(--text-2); font-size: 12.5px; margin-top: 8px; }
+  .empty { color: var(--muted); font-size: 13px; padding: 20px 0; }
+  @media (max-width: 960px) { main { grid-template-columns: 1fr; padding: 0 16px 16px; } header, .filters { padding-left: 16px; padding-right: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>플릿 닥터 관제</h1>
+    <div class="sub">서버는 차 ID 없이 '구간·차종·날짜별 편차'만 받아 길 몫을 계산합니다. 어느 차가 고장인지는 모릅니다.</div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><b id="kReports">0</b><span>쌓인 익명 보고</span></div>
+    <div class="kpi"><b id="kDay">–</b><span>오늘</span></div>
+    <div class="kpi"><b id="kSegs">–</b><span>구간</span></div>
+  </div>
+</header>
+<div class="filters">
+  <div class="seg" role="group" aria-label="지표">
+    <button id="mSteer" aria-pressed="true">핸들 쏠림 몫</button>
+    <button id="mEff" aria-pressed="false">에너지 몫</button>
+  </div>
+  <label>차종 <select id="model"></select></label>
+</div>
+<main>
+  <section>
+    <h2 id="mapTitle">구간마다의 길 몫</h2>
+    <p class="desc" id="mapDesc"></p>
+    <svg id="map" viewBox="0 0 600 600" role="img" aria-label="도로 구간 지도"></svg>
+    <div class="ramp" id="ramp"></div>
+  </section>
+  <section>
+    <h2 id="dailyTitle">날짜별 몫 (차종마다)</h2>
+    <p class="desc" id="dailyDesc"></p>
+    <div class="legend" id="dailyLegend"></div>
+    <svg id="daily" viewBox="0 0 560 300" role="img" aria-label="날짜별 몫 그래프"></svg>
+    <details><summary>표로 보기</summary><div id="dailyTable"></div></details>
+    <h2 style="margin-top:16px">차종 환산 비율</h2>
+    <p class="desc">같은 길·같은 날씨에 전체 차종 평균보다 몇 배 반응하나. 보고가 적은 칸은 이 비율로 다른 차종 값을 빌려 씁니다.</p>
+    <div id="scales"></div>
+  </section>
+  <section class="wide">
+    <h2>시뮬레이션 비교 <small id="simMeta" style="color:var(--text-2);font-weight:400"></small></h2>
+    <p class="desc">같은 차·같은 고장에 길 몫을 구하는 방식만 바꿨을 때. 오경보는 고장 없는 차에 울린 알림입니다.</p>
+    <div id="sim"><div class="empty">simulator/sim.py를 돌리면 여기에 결과가 나옵니다.</div></div>
+  </section>
+</main>
+<div class="tip" id="tip"></div>
+<script src="/static/dashboard.js"></script>
+</body>
+</html>
